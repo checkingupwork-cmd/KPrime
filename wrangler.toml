@@ -1,8 +1,8 @@
 name = "kprime"
 compatibility_date = "2026-10-23"
+compatibility_flags = ["nodejs_compat"]
 
-# Direct l-file l-compiled li kay-khrej mn esbuild
-main = "dist/server.cjs"
+main = "dist/server.js"
 
 [assets]
 directory = "./dist"
