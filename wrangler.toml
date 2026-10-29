@@ -1,10 +1,9 @@
 name = "kprime"
 compatibility_date = "2026-10-23"
 
-# Hada howa l-masar dyal server.ts dyalk (Backend)
-main = "server.ts"
+# Direct l-file l-compiled li kay-khrej mn esbuild
+main = "dist/server.cjs"
 
-# Hada howa l-folder dyal frontend (Vite build output)
 [assets]
 directory = "./dist"
 
