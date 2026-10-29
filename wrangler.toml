@@ -1,0 +1,6 @@
+name = "kprime" # Smiya dyal l-worker dyalk
+
+[[d1_databases]]
+binding = "DB"
+database_name = "my-app-db"       # Smiya li 3titi l-database f Cloudflare
+database_id = "b5880e52-6dd0-4549-a9bd-79d288bb322b"  # Bddl hada b l-ID dyal D1 li tsajjal f Cloudflare
