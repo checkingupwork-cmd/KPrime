@@ -1,6 +1,5 @@
 name = "kprime"
 compatibility_date = "2026-10-23"
-compatibility_flags = ["nodejs_compat"]
 
 main = "dist/server.js"
 
