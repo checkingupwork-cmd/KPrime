@@ -1,6 +1,14 @@
-name = "kprime" # Smiya dyal l-worker dyalk
+name = "kprime"
+compatibility_date = "2026-10-23"
+
+# Hada howa l-masar dyal server.ts dyalk (Backend)
+main = "server.ts"
+
+# Hada howa l-folder dyal frontend (Vite build output)
+[assets]
+directory = "./dist"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "my-app-db"       # Smiya li 3titi l-database f Cloudflare
-database_id = "b5880e52-6dd0-4549-a9bd-79d288bb322b"  # Bddl hada b l-ID dyal D1 li tsajjal f Cloudflare
+database_name = "my-app-db"
+database_id = "b5880e52-6dd0-4549-a9bd-79d288bb322b"
