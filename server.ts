@@ -2,9 +2,9 @@ import { GoogleGenAI, Type } from '@google/genai';
 import { findInEncyclopedia } from './src/data/fragranceEncyclopedia';
 import { searchAndExtractWebPerfume } from './src/services/webFragranceSearch';
 
-// Lazy initialize Gemini client
+// Helper for Gemini Client using Workers env binding
 function getGeminiClient(env: any): GoogleGenAI | null {
-  const apiKey = env?.GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+  const apiKey = env?.GEMINI_API_KEY;
   if (!apiKey) return null;
   return new GoogleGenAI({
     apiKey,
@@ -65,7 +65,7 @@ export default {
           return jsonResponse({ error: 'Valid formula object required.' }, 400);
         }
 
-        const id = newFormula.id || `form_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+        const id = (newFormula as any).id || `form_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
         const contentStr = JSON.stringify(newFormula);
 
         if (db) {
@@ -165,7 +165,7 @@ ${rawText.slice(0, 50000)}
         return jsonResponse({ error: `Perfume not confidently identified. Try adding the brand name.` }, 404);
       }
 
-      // For all other static assets / frontend files in ./dist
+      // Static assets output (Vite build)
       return env.ASSETS.fetch(request);
 
     } catch (err: any) {
