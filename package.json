@@ -1,14 +1,14 @@
 {
-  "name": "kprime",
+  "name": "react-example",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build && esbuild server.ts --bundle --platform=neutral --format=esm --outfile=dist/server.js",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "clean": "rm -rf dist",
     "dev": "tsx server.ts",
     "lint": "tsc --noEmit",
     "preview": "vite preview",
-    "start": "node dist/server.js"
+    "start": "node dist/server.cjs"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
